@@ -1,0 +1,715 @@
+
+/* 1. import */
+
+/* fonts */
+/* @font-face {
+    font-family: Astrology;
+    src: url(/assets/avita.black.otf);
+} */
+
+
+
+/* 2. utils */
+
+/* 2.1 dev */
+
+.border{
+    border: 2px dotted rgb(50, 204, 19);
+}
+
+/* 2.2 prod */
+
+.text--increase-contrast{
+    text-shadow: 1px 1px 4px black;
+}
+
+.cursor-pointer{
+    cursor: pointer;
+}
+
+.font-weight-normal{
+    font-weight: normal;
+}
+
+
+
+/* 3. set up */
+
+body{
+    font-size: 1.25em;
+    margin: 0;
+        
+    text-align: center;
+}
+
+h1{
+    font-size: 2.1em;
+}
+
+h2{
+    font-size: 1.75em;
+    margin: 0px;
+}
+
+h3{
+    margin: 0px
+}
+
+a{
+    color: inherit;
+    text-decoration: inherit;
+}
+
+p{
+    /* font-family: Astrology; */
+
+    font-size: 1.45em;
+    margin: 15px 0 0 0;
+
+    text-align: justify;
+}
+
+.footer__paragraph{
+    font-size: 1.1em;
+}
+
+label{
+    font-size: 1.25em;
+}
+
+input{
+    font-size: 1em;
+}
+
+button{
+    font-size: 0.9em;
+}
+
+
+
+/* 4. layout */
+
+/*  4.1 header */
+
+.header{
+    display: flex;
+    align-items: center;
+    justify-content:space-evenly;
+    gap: 2.5em;
+
+    height: 250px;
+
+    margin: 0;
+
+}
+
+.header__motto{
+    font-size: 1.75vw;
+
+    margin: 0px;
+}
+
+.header__hero{
+    display: flex;
+    justify-content: space-between;
+
+    gap: 4em;
+}
+
+.header__hero__logo{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+
+    gap: 1em;
+}
+
+.header__hero__logo__img{
+    display: block;
+
+    width: 100%;
+    max-width: 100px;
+    
+    border-radius: 100%;
+}
+
+.header__hero__form{ 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 1.5em;
+
+    font-size: 0.9em;
+}
+
+.header__hero__form__inputs{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.header__hero__form__inputs--style{
+    display: block;
+}
+
+.header__hero__form__btn{
+    display: block;
+    font-size: 1.15em;
+    
+    max-width: 100px;
+
+    padding: 5px;
+    
+    border: none;
+
+    border-radius: 10%;
+}
+
+/* 4.2. page */
+
+/* 4.2.1 setup */
+
+.page{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 2%;
+
+    padding: 2.5em;
+}
+
+/* 4.2.2 nav */
+
+.page__nav{
+    display: flex;
+    justify-content: center;
+}
+
+.page__nav__links{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.page__nav__links__btn{
+    margin: 2px 0 2px 0;
+
+    padding: 5px 0 5px 0;
+
+    border: 1px solid rgb(111, 57, 182, 0.5);
+
+}
+
+
+
+/* 4.2.3. pages */
+
+/* 4.2.3.1 setup */
+
+.page__content{
+    margin: 8px 0;
+    padding-right: 2.5em;
+
+    display: flex;
+    justify-content: center;
+
+    width: 75%;
+    max-height: 700px;
+    
+    overflow-y: auto;
+}
+
+.pages__photo{
+    display: block;
+    
+    margin: 20px auto;
+
+    width: 40%;
+    
+}
+
+.pages__photo--full-width{
+    display: block;
+
+    width: 100%;
+    
+}
+
+.pages__btn{
+    font-size: 1.1em;
+
+    margin: 15px 3px 3px 3px;
+    padding: 5px 3px 5px 3px;
+    border: 1px solid rgb(111, 57, 182, 0.5);
+}
+
+/* 4.2.3.2. particular pages */
+
+/* 4.2.3.2.1 astrologer */
+
+.page__astrologer__photos{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.page__astrologer__photos__div{
+    width: 17.5%;
+    height: 17.5%;
+}
+
+.page__astrologer__photo{
+    display: block;
+    
+    width: 100%;
+}
+
+/* 4.2.3.2.2 notes */
+
+.page__notes--link-style{
+    font-size: 1em;
+
+    margin: 3px;
+
+    padding: 5px 3px 5px 3px;
+    /* border: 1px solid rgb(111, 57, 182, 0.5); */
+}
+
+.page__notes__full-note{
+    margin-top: 15px;
+}
+
+/* 4.2.3.2.3 guest room */
+
+.page__guest-room{
+    width: 90%;
+}
+
+.page__guest-room__header{
+    margin-top: 1em;
+    font-size: 1.15em;
+    font-weight: normal;
+}
+
+.page__guest-room__comments{
+    margin: 1.5em 0;
+}
+
+.page__guest-room__comment__user-name{
+    margin: 5px 0;
+
+    font-size: 1.5em;
+}
+
+.page__guest-room__comment__user-comment{
+    margin: 0;
+
+    font-size: 1em; 
+
+    text-align: center;
+}
+
+.page__guest-room__input__comment{
+    width: 75%;
+    height: 10em;
+
+    font-size: 1.05em;
+}
+
+.page__guest-room__input__name{
+    font-size: 0.95em;
+}
+
+/* 4.3 footer */
+
+.footer{
+    padding: 20px 0;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer__paragraph{
+    margin: 0;
+}
+
+.footer__contacts-without-icon{
+    text-align: left;
+    align-self: stretch;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.footer__contacts-with-icon{
+    align-self: stretch;
+
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.footer__contacts-with-icon__contacts{
+    text-align: left;
+    align-self: stretch;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.footer__contacts-with-icon__icons{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.fa-brands{
+    font-size: 2.5em;
+}
+
+
+
+/* 5. specificity/appearance */
+
+/* 5.1 header */
+
+.header{
+    background-image: url(./assets/images/header-background-img.jpg);
+    color: aliceblue;
+}
+
+.header__hero__form__btn{
+    cursor: pointer; 
+}
+
+.header__hero__form__btn:hover{
+    background-color: rgb(114, 188, 218);
+
+    transform: scale(1.15);
+    transition: transform 0.5s ease;
+}
+
+/* 5.2 page */
+
+/* 5.2.1 setup */
+
+.page{
+    background-image: url(/assets/page-background.png) no-repeat center ;
+}
+
+.page__nav__links__btn{
+    color: black;
+
+    text-decoration: none;
+    
+    background-color:rgb(246, 241, 250);
+    
+    cursor: pointer;
+}
+
+.page__nav__links__btn--active{
+    color: whitesmoke;
+    background-color: rgb(111, 57, 182, 0.8);
+
+    transform: scale(1.04);
+}
+
+.page__nav__links__btn:hover{
+    color: whitesmoke;
+    background-color: rgb(111, 57, 182, 0.8);
+
+    transform: scale(1.04);
+}
+
+
+.page__main__promotion{
+    text-align: center;
+}
+
+/* 5.2.2 notes */
+
+.page__notes--link-style{
+    text-decoration: underline rgb(111, 57, 182, 0.5);
+
+    /* background-color:rgb(246, 241, 250); */
+
+    cursor: pointer;
+}
+
+.page__notes--link-style:hover{
+    text-decoration: none;
+
+    color: whitesmoke;
+    background-color: rgb(111, 57, 182, 0.8);
+
+    transform: scale(1.04);
+}
+
+.pages__btn{    
+    background-color:rgb(246, 241, 250);
+
+    cursor: pointer;
+}
+
+.pages__btn:hover{
+    color: whitesmoke;
+    background-color: rgb(111, 57, 182, 0.8);
+
+    transform: scale(1.04);
+}
+
+/* 5.3 footer */
+
+.footer{
+    color: whitesmoke;
+    background-image: url(/assets/header-background-img.jpg);
+}
+
+.fa-brands{
+    color: whitesmoke;
+
+    cursor: pointer;
+}
+
+.fa-brands:hover{
+    color: rgb(88, 216, 216);
+}
+
+.footer--clipboard:hover{
+    cursor: pointer;
+}
+
+
+
+/* 6. functionality */
+
+/* 6.1 pages */
+
+.hidden{
+    display: none;
+}
+
+/* 6.2. particular pages */
+
+/* 6.2.1 astrologer */
+
+/* toggle dimploms photos */
+
+.page__astrologer__diplom-photo--expanded{
+    position: absolute;
+    top: 30%;
+    left: 32.5%;
+    width: 35%;
+    height: 35%;
+}
+
+
+
+/* 7. media queries */
+
+
+@media screen and (max-width: 1320px){
+
+    /* setup */
+
+    p{
+        font-size: 1.25em;
+    }
+
+    h2{
+        font-size: 1.5em;
+    }
+
+    /* header */
+
+    .header{
+        flex-direction: column;
+
+        height: 400px;
+        row-gap: 10px;
+    }
+
+    .header__motto{
+        font-size: 2.5vw;
+    }   
+
+    /* astrologer page */
+
+    .page__astrologer__diplom-photo--expanded{
+        top: 50%;
+    }
+}
+
+@media screen and (max-width: 1000px){
+
+    /* setup */
+
+    p{
+        font-size: 1.1em;
+    }
+
+    h2{
+        font-size: 1.25em;
+    }
+
+    /* header */
+
+    .header{
+        flex-direction: column;
+        justify-content: center;
+        height: 600px;
+        row-gap: 10px;
+    }
+
+    .header__motto{
+        font-size: 2.75vw;
+    }  
+
+    .header__hero{
+        flex-direction: column;
+
+        gap: 0px;
+    }
+
+    .header__hero__form{
+        justify-content: center;
+        gap: 1em;
+    }
+
+    /* astrologer page */
+
+    .page__astrologer__photos{
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .page__astrologer__photos__div{
+        width: 75%;
+        height: 75%;
+    }
+}
+
+@media screen and (max-width: 900px) {
+
+    /* header */
+
+    .header__motto{
+        font-size: 3.25vw;
+    }
+
+    /* page */
+    
+    .page{
+        flex-direction: column;
+    }
+
+    .page__content{
+        width: 100%;
+        max-height: none;
+
+        margin-top: 2%;
+    }
+}
+
+@media screen and (max-width: 700px){
+
+    /* header */
+
+    .header__motto{
+        font-size: 4.25vw;
+    }
+    
+    /* footer */
+
+    .footer{
+        flex-direction: column;
+    }
+
+    .footer__contacts-without-icon{
+        text-align: center;
+        align-self: center;
+        gap: 20px;
+    }
+
+    .footer__contacts-with-icon{
+        justify-content: center;
+        gap: 5px;
+    }
+}
+
+@media screen and (max-width: 500px){
+
+    /* setup */
+
+    p{
+        font-size: 1em;
+    }
+
+    h1{
+        font-size: 1.5em;
+    }
+
+    h2{
+        font-size: 1.25em;
+    }
+
+    /* header */
+
+    .header{
+        height: 700px;
+        row-gap: 20px;
+    }
+    
+    .header__hero__logo{
+        flex-direction: column;
+
+        gap: 0px;
+    }
+
+    .header__hero__form{
+        flex-direction: column;
+        gap: 1.5em;
+    }
+
+    /* notes page */
+
+    .pages__btn{
+        font-size: 0.9em;
+    }
+}
+
+@media screen and (max-width: 420px){
+
+    /* setup */
+
+    p{
+        font-size: 1em;
+    }
+
+    /* header */
+
+    .header__motto{
+        font-size: 5.25vw;
+    }  
+
+    /* page */
+
+    .page{
+        margin: 2px;
+        padding: 0px;
+    }
+
+    .page__content{
+        width: 75%;
+        max-height: none;
+        padding: 2.5em;
+
+        margin-top: 2%;
+    }
+}
