@@ -7,7 +7,7 @@ const useGetPagesData = () => {
     useEffect ( ()=>{
         const fetchPagesData = async () => {
             try {
-                const res = await fetch('http://localhost:8000/api/page/')
+                const res = await fetch('https://gumastro-server.onrender.com/api/page/')
                 const data = await res.json()
                 setPagesData(data)
             }

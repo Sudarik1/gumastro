@@ -12,7 +12,7 @@ const Main = ( {} ) => {
     useEffect ( ()=>{
         const fetchCommentsData = async () => {
             try {
-                const res = await fetch('http://localhost:8000/api/comment/')
+                const res = await fetch('https://gumastro-server.onrender.com/api/comment/')
                 const data = await res.json()
                 setCommentsData(data)
             }

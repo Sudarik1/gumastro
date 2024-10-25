@@ -14,7 +14,7 @@ const Notes = () => {
     useEffect ( ()=>{
         const fetchNotesData = async () => {
             try {
-                const res = await fetch('http://localhost:8000/api/note/')
+                const res = await fetch('https://gumastro-server.onrender.com/api/note/')
                 const data = await res.json()
                 setNotesData(data)
             }
