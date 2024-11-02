@@ -27,7 +27,7 @@ const GuestRoom = ( {} ) => {
         fetchCommentsData()
     }, [])
 
-    const addCommentHandler = (e, userName, comment) => {
+    const addCommentHandler = (e) => {
 
         e.preventDefault();
         const confirm = window.confirm('Уверены, что хотите оставить этот комментарий?')
@@ -72,7 +72,7 @@ const GuestRoom = ( {} ) => {
                             </div>
                         ))}
                     </div>
-                    <form onSubmit={ (e) => addCommentHandler(e) } noValidate>
+                    <form onSubmit={addCommentHandler} noValidate>
                         <div>                              
                             <div>
                                 <label htmlFor="guestRoom__userComment" className="text--increase-contrast"></label>
