@@ -3,7 +3,7 @@ import PageContentWithImage from "../components/PageContentWithImage";
 
 import photo from '../assets/images/prediction-map-photo.jpg'
 
-const BirthdayMap = () => {
+const Prediction = () => {
     return(
         <PageContentWithImage 
         elementIndex = {2} 
@@ -13,4 +13,4 @@ const BirthdayMap = () => {
     )
 }
 
-export default BirthdayMap
+export default Prediction

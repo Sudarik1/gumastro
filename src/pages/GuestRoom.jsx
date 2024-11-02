@@ -2,12 +2,15 @@
 import { useState, useEffect } from "react";
 
 import useGetPagesData from "../utils/useGetPagesData"
+import { comment } from "postcss";
 
-const Main = ( {} ) => {
+const GuestRoom = ( {} ) => {
 
     const pagesData = useGetPagesData()
 
     const [commentsData, setCommentsData] = useState([])
+    const [userName, setUserName] = useState('')
+    const [comment, setComment] = useState('')
 
     useEffect ( ()=>{
         const fetchCommentsData = async () => {
@@ -24,6 +27,37 @@ const Main = ( {} ) => {
         fetchCommentsData()
     }, [])
 
+    const addCommentHandler = (e, userName, comment) => {
+
+        e.preventDefault();
+        const confirm = window.confirm('Уверены, что хотите оставить этот комментарий?')
+        if(!confirm){
+            return
+        }
+
+        const addComment = async (userName, comment) => {
+            try {
+                const res = await fetch('https://gumastro-server.onrender.com/api/comment/', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        userName: userName,
+                        comment: comment                    
+                    })
+                })
+            }
+            catch (error) {
+                console.log('Возникла ошибка во время обновления названия заметки', error)
+            }
+        }
+
+        addComment(userName, comment)
+        setUserName('')
+        setComment('')
+    }
+
     return (
         <div className="page__guest-room">
             {pagesData.length > 0 && (
@@ -38,17 +72,32 @@ const Main = ( {} ) => {
                             </div>
                         ))}
                     </div>
-                    <form noValidate>
+                    <form onSubmit={ (e) => addCommentHandler(e) } noValidate>
                         <div>                              
                             <div>
                                 <label htmlFor="guestRoom__userComment" className="text--increase-contrast"></label>
                                 <br></br>
-                                <textarea className="page__guest-room__input__comment" name="guestRoom__userComment" placeholder="Поделитесь своими впечатлениями здесь" required></textarea>
+                                <textarea 
+                                className="page__guest-room__input__comment" 
+                                name="guestRoom__userComment" 
+                                placeholder="Поделитесь своими впечатлениями здесь" 
+                                onChange={(e) => setComment(e.target.value)}
+                                required
+                                >
+                                </textarea>
                                 <br></br>
                             </div>
                             <div>
                                 <label htmlFor="guestRoom__userName" className="text--increase-contrast"></label>
-                                <input type="text" className="page__guest-room__input__name" name="guestRoom__userName" placeholder="Ваше имя" required></input>
+                                <input 
+                                type="text" 
+                                className="page__guest-room__input__name" 
+                                name="guestRoom__userName" 
+                                placeholder="Ваше имя" 
+                                onChange={(e) => setUserName(e.target.value)}
+                                required
+                                >
+                                </input>
                             </div>                      
                         </div>
                     
@@ -64,4 +113,4 @@ const Main = ( {} ) => {
     );
 }
 
-export default Main
+export default GuestRoom

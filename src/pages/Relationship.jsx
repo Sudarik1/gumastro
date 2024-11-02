@@ -3,7 +3,7 @@ import PageContentWithImage from "../components/PageContentWithImage";
 
 import photo from '../assets/images/relationship-map-photo.jpg'
 
-const BirthdayMap = () => {
+const Relationship = () => {
     return(
         <PageContentWithImage 
         elementIndex = {3} 
@@ -13,4 +13,4 @@ const BirthdayMap = () => {
     )
 }
 
-export default BirthdayMap
+export default Relationship

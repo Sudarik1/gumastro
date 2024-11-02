@@ -3,7 +3,7 @@ import PageContentWithImage from "../components/PageContentWithImage";
 
 import photo from '../assets/images/karma-map-photo.jpg'
 
-const BirthdayMap = () => {
+const Karma = () => {
     return(
         <PageContentWithImage 
         elementIndex = {4} 
@@ -13,4 +13,4 @@ const BirthdayMap = () => {
     )
 }
 
-export default BirthdayMap
+export default Karma
