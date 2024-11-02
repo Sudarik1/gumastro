@@ -1,7 +1,47 @@
 
+import { useState } from 'react';
+
 import logo from '../assets/images/logo.png'
 
 const Header = () => {
+
+    const [applicantName, setApplicantName] = useState('')
+    const [applicantPhone, setApplicantPhone] = useState('')
+    const [applicantEmail, setApplicantEmail] = useState('')
+    
+    const addApplicationHandler = (e) => {
+
+        e.preventDefault();
+        const confirm = window.confirm('Уверены, что хотите оставить этот комментарий?')
+        if(!confirm){
+            return
+        }
+
+        const addApplication = async (applicantName, applicantPhone, applicantEmail) => {
+            try {
+                const res = await fetch('https://gumastro-server.onrender.com/api/application/', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        name: applicantName,
+                        phone: applicantPhone,
+                        email: applicantEmail                    
+                    })
+                })
+            }
+            catch (error) {
+                console.log('Возникла ошибка во время подачи заявки', error)
+            }
+        }
+
+        addApplication(applicantName, applicantPhone, applicantEmail)
+        setApplicantName('')
+        setApplicantPhone('')
+        setApplicantEmail('')
+    }
+
     return(
         <div className="header">
 
@@ -27,7 +67,7 @@ const Header = () => {
                     </h1>
                 </div>
 
-                <form className="header__hero__form increase-contrast" noValidate> 
+                <form onSubmit={addApplicationHandler} className="header__hero__form increase-contrast" noValidate> 
                     <div className="header__hero__form__inputs">
                         <div>
                             <label htmlFor="user-name" className="increase-contrast" >Ваше имя</label>
@@ -36,6 +76,7 @@ const Header = () => {
                                 type="text" 
                                 name="user-name" 
                                 placeholder="Укажите по желанию"
+                                onChange={(e) => setApplicantName(e.target.value)}
                                 pattern="^[a-zA-Zа-яА-ЯёЁ]+(([',. -][a-zA-Zа-яА-ЯёЁ ])?[a-zA-Zа-яА-ЯёЁ]*)*$"
                             >
                             </input>
@@ -48,6 +89,7 @@ const Header = () => {
                                 type="email" 
                                 name="user-email" 
                                 placeholder="Ваша почта"
+                                onChange={(e) => setApplicantEmail(e.target.value)}
                             >
                             </input>
                         </div>
@@ -59,6 +101,7 @@ const Header = () => {
                                 type="phone" 
                                 name="user-phone" 
                                 placeholder="Укажите по желанию"
+                                onChange={(e) => setApplicantPhone(e.target.value)}
                             >
                             </input>
                         </div>
