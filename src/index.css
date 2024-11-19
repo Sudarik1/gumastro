@@ -468,7 +468,7 @@ button{
 
 .footer{
     color: whitesmoke;
-    background-image: url(/assets/header-background-img.jpg);
+    background-image: url(./assets/images/header-background-img.jpg);
 }
 
 .fa-brands{
